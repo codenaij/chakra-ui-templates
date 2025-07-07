@@ -35,7 +35,7 @@ const MainComponentBlock = ({
 							onValueChange={({ value }) => {
 								setView(value as "code" | "preview");
 							}}
-							variant={"roundedLightOutlineBrand"}
+							variant={"roundedLightOutlineBrand" as const}
 						>
 							<Radio value="preview">Preview</Radio>
 							<Radio value="code">Code</Radio>
