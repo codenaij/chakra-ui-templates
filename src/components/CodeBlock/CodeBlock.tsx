@@ -2,7 +2,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodeBlockProps {
-	children: React.ReactNode;
+	children: string;
 	language?: string;
 }
 
