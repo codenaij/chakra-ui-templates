@@ -1,0 +1,3 @@
+{
+  "buildCommand": "npx @chakra-ui/cli typegen ./src/theme/system.ts && npm run build"
+}
