@@ -104,8 +104,6 @@ const MainRoute = ({ route }: Readonly<MainRouteProps>) => {
 };
 
 const SidebarMenu = () => {
-	const pathname = usePathname();
-
 	return (
 		<Box m={0} listStyleType={"none"} p={0} as={"ul"}>
 			{MenuItems.map((route) => {
