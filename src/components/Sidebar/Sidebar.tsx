@@ -3,8 +3,8 @@ import { Box } from "@chakra-ui/react";
 const Sidebar = () => {
 	return (
 		<Box
-			h={"calc(100vh - 60px)"}
-			w={"20%"}
+			h={"calc(100vh - 80px)"}
+			w={"350px"}
 			bg={"basic.100"}
 			pt={10}
 			px={20}

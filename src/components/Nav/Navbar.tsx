@@ -6,7 +6,7 @@ const Navbar = () => {
 			w="100%"
 			justify="space-between"
 			align="center"
-			h="60px"
+			h="80px"
 			// bg="red.100"
 			px={20}
 		>
