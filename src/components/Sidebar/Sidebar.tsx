@@ -1,6 +1,10 @@
-import { Box } from "@chakra-ui/react";
+"use client";
+
+import { Box, useDisclosure } from "@chakra-ui/react";
+import SidebarMenu from "./SidebarMenu";
 
 const Sidebar = () => {
+	const { open, onToggle } = useDisclosure({ defaultOpen: true });
 	return (
 		<Box
 			display={{ base: "none", md: "block" }}
@@ -11,7 +15,7 @@ const Sidebar = () => {
 			px={20}
 			overflow={"hidden"}
 		>
-			Sidebar
+			<SidebarMenu />
 		</Box>
 	);
 };

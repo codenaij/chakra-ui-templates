@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Box,
 	Button,
@@ -8,27 +10,41 @@ import {
 	Portal,
 	Text,
 } from "@chakra-ui/react";
-import { LuAlignRight } from "react-icons/lu";
+import { useRouter } from "next/navigation";
+import { LuAlignRight, LuGithub } from "react-icons/lu";
+import SidebarMenu from "../Sidebar/SidebarMenu";
 
 const Navbar = () => {
+	const router = useRouter();
 	return (
 		<Flex
 			w="100%"
 			justify="space-between"
 			align="center"
 			h="80px"
-			// bg="red.100"
 			px={{ base: 5, md: 20 }}
 		>
-			<Text fontSize={"2xl"} fontWeight={"bold"}>
+			<Text
+				fontSize={"2xl"}
+				fontWeight={"bold"}
+				cursor={"pointer"}
+				onClick={() => router.push("/")}
+			>
 				CHAKRA-TEMPLATES
 			</Text>
 			<Box display={{ base: "none", md: "flex" }} gap={10} alignItems="center">
 				<Button variant="underlined">Components</Button>
-				<Text>Templates</Text>
-				<Button variant="elevated">Get Started</Button>
+				<IconButton variant="closeElevated">
+					<LuGithub color="white" />
+				</IconButton>
+				<Button
+					variant="elevated"
+					onClick={() => router.push("/getting-started/overview")}
+				>
+					Get Started
+				</Button>
 			</Box>
-			<Drawer.Root placement="start" size={"md"}>
+			<Drawer.Root placement="start" size={"xs"}>
 				<Drawer.Trigger asChild>
 					<Box display={{ base: "block", md: "none" }}>
 						<IconButton aria-label="Toggle sidebar" variant="elevated">
@@ -39,15 +55,12 @@ const Navbar = () => {
 				<Portal>
 					<Drawer.Backdrop />
 					<Drawer.Positioner>
-						<Drawer.Content>
+						<Drawer.Content bg={"basic.100"}>
 							<Drawer.Header>
-								<Drawer.Title>Drawer Title</Drawer.Title>
+								<Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
 							</Drawer.Header>
 							<Drawer.Body>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
+								<SidebarMenu />
 							</Drawer.Body>
 
 							<Drawer.CloseTrigger asChild>
