@@ -27,7 +27,13 @@ export default function RootLayout({
 						<Navbar />
 						<Flex flexDir="row" flex={"auto"}>
 							<Sidebar />
-							<Box w={"80%"} bg={"teal"} pt={10} px={20}>
+							<Box
+								w={{ base: "100%", md: "calc(100% - 350px)" }}
+								minH={"calc(100vh - 80px)"}
+								bg={"teal"}
+								pt={10}
+								px={{ base: 5, md: 20 }}
+							>
 								{children}
 							</Box>
 						</Flex>

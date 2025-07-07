@@ -12,15 +12,21 @@ export const buttonRecipe = defineRecipe({
 					boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)",
 				},
 			},
+			closeElevated: {
+				bg: "purple",
+				borderColor: "black",
+				borderWidth: "1.5px",
+				borderRadius: "5px",
+				_hover: {
+					boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)",
+				},
+			},
 			underlined: {
 				bg: "transparent",
 				border: "none",
 				_hover: {
 					textDecoration: "underline",
 					textUnderlineOffset: "6px",
-					// borderBottom: "1px solid",
-					// borderColor: "black",
-					// borderRadius: "0px",
 				},
 				_active: {
 					textDecoration: "underline",
