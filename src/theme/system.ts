@@ -1,5 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { buttonRecipe } from "./recipies/buttonRecipe";
+import { radioGroupSlotRecipe } from "./recipies/radioRecipe";
 
 const config = defineConfig({
 	globalCss: {
@@ -30,6 +31,9 @@ const config = defineConfig({
 		},
 		recipes: {
 			button: buttonRecipe,
+		},
+		slotRecipes: {
+			radioGroup: radioGroupSlotRecipe,
 		},
 	},
 });

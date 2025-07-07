@@ -30,7 +30,7 @@ const Navbar = () => {
 				cursor={"pointer"}
 				onClick={() => router.push("/")}
 			>
-				CHAKRA-TEMPLATES
+				CHAKRA-TEMPLATES-V3
 			</Text>
 			<Box display={{ base: "none", md: "flex" }} gap={10} alignItems="center">
 				<Button variant="underlined">Components</Button>
