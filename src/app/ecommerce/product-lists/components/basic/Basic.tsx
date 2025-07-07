@@ -81,6 +81,8 @@ const Basic = () => {
 									alt={product.imageAlt}
 									objectFit={"cover"}
 									_groupHover={{ opacity: 0.75 }}
+									bg={"gray.200"}
+									borderRadius={"lg"}
 									w={"full"}
 									aspectRatio={{ base: 1, xl: 7 / 8 }}
 								/>

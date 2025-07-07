@@ -18,20 +18,54 @@ const Navbar = () => {
 	const router = useRouter();
 	return (
 		<Flex
+			pos={"sticky"}
+			top={0}
+			boxShadow={"rgba(0, 0, 0, 0.25) 0px 2px 6px"}
+			zIndex={1000}
 			w="100%"
 			justify="space-between"
 			align="center"
 			h="80px"
+			bg={"white"}
 			px={{ base: 5, md: 20 }}
 		>
-			<Text
-				fontSize={"2xl"}
-				fontWeight={"bold"}
-				cursor={"pointer"}
-				onClick={() => router.push("/")}
-			>
-				CHAKRA-TEMPLATES-V3
-			</Text>
+			<Flex gap={2}>
+				<Drawer.Root placement="start" size={"xs"}>
+					<Drawer.Trigger asChild>
+						<Box>
+							<IconButton aria-label="Toggle sidebar" variant="elevated">
+								<LuAlignRight />
+							</IconButton>
+						</Box>
+					</Drawer.Trigger>
+					<Portal>
+						<Drawer.Backdrop />
+						<Drawer.Positioner>
+							<Drawer.Content bg={"basic.100"}>
+								<Drawer.Header>
+									<Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
+								</Drawer.Header>
+								<Drawer.Body>
+									<SidebarMenu />
+								</Drawer.Body>
+
+								<Drawer.CloseTrigger asChild>
+									<CloseButton size="sm" variant="closeElevated" />
+								</Drawer.CloseTrigger>
+							</Drawer.Content>
+						</Drawer.Positioner>
+					</Portal>
+				</Drawer.Root>
+				<Text
+					fontSize={"2xl"}
+					fontWeight={"semibold"}
+					cursor={"pointer"}
+					color={"black"}
+					onClick={() => router.push("/")}
+				>
+					CHAKRA-TEMPLATES
+				</Text>
+			</Flex>
 			<Box display={{ base: "none", md: "flex" }} gap={10} alignItems="center">
 				<Button variant="underlined">Components</Button>
 				<IconButton variant="closeElevated">
@@ -44,32 +78,6 @@ const Navbar = () => {
 					Get Started
 				</Button>
 			</Box>
-			<Drawer.Root placement="start" size={"xs"}>
-				<Drawer.Trigger asChild>
-					<Box display={{ base: "block", md: "none" }}>
-						<IconButton aria-label="Toggle sidebar" variant="elevated">
-							<LuAlignRight />
-						</IconButton>
-					</Box>
-				</Drawer.Trigger>
-				<Portal>
-					<Drawer.Backdrop />
-					<Drawer.Positioner>
-						<Drawer.Content bg={"basic.100"}>
-							<Drawer.Header>
-								<Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
-							</Drawer.Header>
-							<Drawer.Body>
-								<SidebarMenu />
-							</Drawer.Body>
-
-							<Drawer.CloseTrigger asChild>
-								<CloseButton size="sm" variant="closeElevated" />
-							</Drawer.CloseTrigger>
-						</Drawer.Content>
-					</Drawer.Positioner>
-				</Portal>
-			</Drawer.Root>
 		</Flex>
 	);
 };

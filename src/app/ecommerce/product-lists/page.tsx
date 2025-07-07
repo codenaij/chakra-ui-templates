@@ -2,8 +2,13 @@
 
 import MainComponentBlock from "@/components/MainComponentBlock/MainComponentBlock";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
-import Basic from "./components/Basic";
-import { basicString } from "./components/basicString";
+import Basic from "./components/basic/Basic";
+import { basicString } from "./components/basic/basicString";
+
+import WithBorderGrid from "./components/withBorderGrid/WithBorderGrid";
+import { withBorderGridString } from "./components/withBorderGrid/withBorderGridString";
+import WithCtaLink from "./components/withCtaLink/WithCtaLink";
+import { withCtaLinkString } from "./components/withCtaLink/withCtaLinkString";
 
 const ProductListsPage = () => {
 	return (
@@ -21,7 +26,21 @@ const ProductListsPage = () => {
 					</Text>
 				</Flex>
 			</Center>
-			<MainComponentBlock codeString={basicString} component={<Basic />} />
+			<MainComponentBlock
+				title="Basic"
+				codeString={basicString}
+				component={<Basic />}
+			/>
+			<MainComponentBlock
+				title="With Border Grid"
+				codeString={withBorderGridString}
+				component={<WithBorderGrid />}
+			/>
+			<MainComponentBlock
+				title="With CTA Link"
+				codeString={withCtaLinkString}
+				component={<WithCtaLink />}
+			/>
 		</Box>
 	);
 };

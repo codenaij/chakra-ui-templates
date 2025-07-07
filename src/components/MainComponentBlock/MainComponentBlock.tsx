@@ -1,20 +1,22 @@
 import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { LuExternalLink } from "react-icons/lu";
+import { LuCheck, LuClipboardCopy, LuExternalLink } from "react-icons/lu";
 import CodeBlock from "../CodeBlock/CodeBlock";
 import { Radio, RadioGroup } from "../ui/radio";
 
 interface MainComponentBlockProps {
-	// view: "preview" | "code";
+	title: string;
 	codeString: string;
 	component: React.ReactNode;
 }
 
 const MainComponentBlock = ({
+	title,
 	codeString,
 	component,
 }: Readonly<MainComponentBlockProps>) => {
 	const [view, setView] = useState<"preview" | "code">("preview");
+	const [isCopied, setIsCopied] = useState(false);
 	return (
 		<Box mx={"auto"} border={"2px solid"} borderColor={"black"} my={4}>
 			<Box>
@@ -25,7 +27,7 @@ const MainComponentBlock = ({
 					p={4}
 				>
 					<Text fontSize={"xl"} fontWeight={"bold"}>
-						Basic
+						{title}
 					</Text>
 					<Flex gap={2} alignItems={"center"}>
 						<RadioGroup
@@ -38,8 +40,31 @@ const MainComponentBlock = ({
 							<Radio value="preview">Preview</Radio>
 							<Radio value="code">Code</Radio>
 						</RadioGroup>
-						<IconButton variant={"closeElevated"} size={"sm"} bg={"basic.100"}>
-							<LuExternalLink />
+						<IconButton
+							variant={"closeElevated"}
+							size={"sm"}
+							bg={"basic.100"}
+							onClick={() => {
+								if (view === "code") {
+									navigator.clipboard.writeText(codeString);
+									setIsCopied(true);
+									setTimeout(() => {
+										setIsCopied(false);
+									}, 2000);
+								}
+							}}
+						>
+							{view === "preview" ? (
+								<LuExternalLink color={"black"} />
+							) : (
+								<Box>
+									{isCopied ? (
+										<LuCheck color="black" />
+									) : (
+										<LuClipboardCopy color={"black"} />
+									)}
+								</Box>
+							)}
 						</IconButton>
 					</Flex>
 				</Flex>

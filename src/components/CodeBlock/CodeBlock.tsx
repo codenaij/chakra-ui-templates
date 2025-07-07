@@ -17,6 +17,7 @@ const CodeBlock = ({
 			customStyle={{
 				margin: 0,
 				fontSize: "0.75rem",
+				height: "500px",
 			}}
 		>
 			{children}

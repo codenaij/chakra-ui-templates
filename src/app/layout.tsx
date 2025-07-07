@@ -1,5 +1,4 @@
 import Navbar from "@/components/Nav/Navbar";
-import Sidebar from "@/components/Sidebar/Sidebar";
 import { Provider } from "@/components/ui/provider";
 import { Box, Flex } from "@chakra-ui/react";
 import type { Metadata } from "next";
@@ -24,16 +23,16 @@ export default function RootLayout({
 			<body className={`${dmSans.className}`}>
 				<Provider>
 					{/* <LightMode> */}
-					<Box>
+					<Box height={"100vh"}>
 						<Navbar />
-						<Flex flexDir="row" flex={"auto"}>
-							<Sidebar />
+						<Flex flexDir="row" flex={"1"} height={"calc(100vh - 80px)"}>
+							{/* <Sidebar /> */}
 							<Box
-								w={{ base: "100%", md: "calc(100% - 350px)" }}
-								minH={"calc(100vh - 80px)"}
+								w={"100%"}
 								bg={"teal"}
 								pt={10}
 								px={{ base: 5, md: 20 }}
+								overflowY={"auto"}
 							>
 								{children}
 							</Box>
