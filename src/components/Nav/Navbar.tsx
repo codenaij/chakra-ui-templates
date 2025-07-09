@@ -23,8 +23,6 @@ const Navbar = () => {
 		drawer.setOpen(false);
 	};
 
-	console.log(drawer);
-
 	return (
 		<Flex
 			pos={"sticky"}
