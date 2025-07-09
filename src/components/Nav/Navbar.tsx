@@ -34,7 +34,7 @@ const Navbar = () => {
 					<Drawer.Trigger asChild>
 						<Box>
 							<IconButton aria-label="Toggle sidebar" variant="elevated">
-								<LuAlignRight />
+								<LuAlignRight color={"gray.900"} />
 							</IconButton>
 						</Box>
 					</Drawer.Trigger>
@@ -60,7 +60,7 @@ const Navbar = () => {
 					fontSize={"2xl"}
 					fontWeight={"semibold"}
 					cursor={"pointer"}
-					color={"black"}
+					color={"gray.900"}
 					onClick={() => router.push("/")}
 				>
 					CHAKRA-TEMPLATES

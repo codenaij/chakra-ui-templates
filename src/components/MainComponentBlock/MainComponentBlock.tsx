@@ -1,4 +1,7 @@
+"use client";
+
 import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { LuCheck, LuClipboardCopy, LuExternalLink } from "react-icons/lu";
 import CodeBlock from "../CodeBlock/CodeBlock";
@@ -8,15 +11,18 @@ interface MainComponentBlockProps {
 	title: string;
 	codeString: string;
 	component: React.ReactNode;
+	link?: string;
 }
 
 const MainComponentBlock = ({
 	title,
 	codeString,
 	component,
+	link,
 }: Readonly<MainComponentBlockProps>) => {
 	const [view, setView] = useState<"preview" | "code">("preview");
 	const [isCopied, setIsCopied] = useState(false);
+	const router = useRouter();
 	return (
 		<Box mx={"auto"} border={"2px solid"} borderColor={"black"} my={4}>
 			<Box>
@@ -51,6 +57,9 @@ const MainComponentBlock = ({
 									setTimeout(() => {
 										setIsCopied(false);
 									}, 2000);
+								}
+								if (view === "preview" && link) {
+									router.push(link);
 								}
 							}}
 						>

@@ -23,6 +23,10 @@ export const MenuItems: Route[] = [
 				name: "Product Overviews",
 				href: "product-overviews",
 			},
+			{
+				name: "Product Features",
+				href: "product-features",
+			},
 		],
 	},
 ];

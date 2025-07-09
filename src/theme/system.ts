@@ -20,7 +20,7 @@ const config = defineConfig({
 					DEFAULT: { value: "#FF0000" },
 					100: { value: "#FFF59F" },
 				},
-				green: { value: "#2FFF2F" },
+				greenT: { value: "#2FFF2F" },
 				// red: { value: "#FF4911" },
 				red: {
 					DEFAULT: { value: "#EE0F0F" },

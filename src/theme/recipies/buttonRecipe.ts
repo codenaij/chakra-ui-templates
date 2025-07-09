@@ -8,6 +8,7 @@ export const buttonRecipe = defineRecipe({
 				borderColor: "black",
 				borderWidth: "1.5px",
 				borderRadius: "0px",
+				color: "gray.900",
 				_hover: {
 					boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)",
 				},
@@ -24,6 +25,7 @@ export const buttonRecipe = defineRecipe({
 			underlined: {
 				bg: "transparent",
 				border: "none",
+				color: "gray.900",
 				_hover: {
 					textDecoration: "underline",
 					textUnderlineOffset: "6px",
