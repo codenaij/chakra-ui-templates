@@ -3,7 +3,7 @@
 import { Box } from "@chakra-ui/react";
 import SidebarMenu from "./SidebarMenu";
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }: Readonly<{ onClose: () => void }>) => {
 	return (
 		<Box
 			display={{ base: "none", md: "block" }}
@@ -14,7 +14,7 @@ const Sidebar = () => {
 			pt={10}
 			px={20}
 		>
-			<SidebarMenu />
+			<SidebarMenu onClose={onClose} />
 		</Box>
 	);
 };

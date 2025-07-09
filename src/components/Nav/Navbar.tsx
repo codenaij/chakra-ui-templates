@@ -9,6 +9,7 @@ import {
 	IconButton,
 	Portal,
 	Text,
+	useDrawer,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { LuAlignRight, LuGithub } from "react-icons/lu";
@@ -16,6 +17,14 @@ import SidebarMenu from "../Sidebar/SidebarMenu";
 
 const Navbar = () => {
 	const router = useRouter();
+	const drawer = useDrawer();
+
+	const handleCloseDrawer = () => {
+		drawer.setOpen(false);
+	};
+
+	console.log(drawer);
+
 	return (
 		<Flex
 			pos={"sticky"}
@@ -30,7 +39,7 @@ const Navbar = () => {
 			px={{ base: 5, md: 20 }}
 		>
 			<Flex gap={2}>
-				<Drawer.Root placement="start" size={"xs"}>
+				<Drawer.RootProvider placement="start" size={"xs"} value={drawer}>
 					<Drawer.Trigger asChild>
 						<Box>
 							<IconButton aria-label="Toggle sidebar" variant="elevated">
@@ -46,7 +55,7 @@ const Navbar = () => {
 									<Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
 								</Drawer.Header>
 								<Drawer.Body>
-									<SidebarMenu />
+									<SidebarMenu onClose={handleCloseDrawer} />
 								</Drawer.Body>
 
 								<Drawer.CloseTrigger asChild>
@@ -55,7 +64,7 @@ const Navbar = () => {
 							</Drawer.Content>
 						</Drawer.Positioner>
 					</Portal>
-				</Drawer.Root>
+				</Drawer.RootProvider>
 				<Text
 					fontSize={"2xl"}
 					fontWeight={"semibold"}

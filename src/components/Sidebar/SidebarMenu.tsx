@@ -21,12 +21,14 @@ const itemProps = {
 
 interface MainRouteProps {
 	route: Route;
+	onClose: () => void;
 }
 
 const ChildRoute = ({
 	route,
 	path,
-}: Readonly<{ route: Route; path: string }>) => {
+	onClose,
+}: Readonly<{ route: Route; path: string; onClose: () => void }>) => {
 	const fullPath = `/${path}/${route.href}`;
 	const pathname = usePathname();
 	const active = pathname.startsWith(fullPath);
@@ -35,6 +37,7 @@ const ChildRoute = ({
 	const handleClick = () => {
 		// Close the drawer when a menu item is clicked
 		// drawer.setOpen(false);
+		onClose();
 	};
 
 	return (
@@ -59,7 +62,7 @@ const ChildRoute = ({
 	);
 };
 
-const MainRoute = ({ route }: Readonly<MainRouteProps>) => {
+const MainRoute = ({ route, onClose }: Readonly<MainRouteProps>) => {
 	const hasChildren = (route.children?.length ?? 0) > 0;
 	const pathname = usePathname();
 
@@ -95,6 +98,7 @@ const MainRoute = ({ route }: Readonly<MainRouteProps>) => {
 							route={child}
 							path={route.href || "/"}
 							key={child.name}
+							onClose={onClose}
 						/>
 					))}
 				</Box>
@@ -103,11 +107,11 @@ const MainRoute = ({ route }: Readonly<MainRouteProps>) => {
 	);
 };
 
-const SidebarMenu = () => {
+const SidebarMenu = ({ onClose }: Readonly<{ onClose: () => void }>) => {
 	return (
 		<Box m={0} listStyleType={"none"} p={0} as={"ul"}>
 			{MenuItems.map((route) => {
-				return <MainRoute route={route} key={route.name} />;
+				return <MainRoute route={route} key={route.name} onClose={onClose} />;
 			})}
 		</Box>
 	);
