@@ -5,7 +5,7 @@ export default function Example() {
 	return (
 		<Box>
 			<Box>
-				<Text>Filters</Text>
+				<Text>Filters (100)</Text>
 			</Box>
 		</Box>
 	);
