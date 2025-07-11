@@ -27,6 +27,10 @@ export const MenuItems: Route[] = [
 				name: "Product Features",
 				href: "product-features",
 			},
+			{
+				name: "Category Filters",
+				href: "category-filters",
+			},
 		],
 	},
 ];

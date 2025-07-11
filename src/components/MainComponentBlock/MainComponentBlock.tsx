@@ -24,7 +24,13 @@ const MainComponentBlock = ({
 	const [isCopied, setIsCopied] = useState(false);
 	const router = useRouter();
 	return (
-		<Box mx={"auto"} border={"2px solid"} borderColor={"black"} my={4}>
+		<Box
+			mx={"auto"}
+			maxW={"8xl"}
+			border={"2px solid"}
+			borderColor={"black"}
+			my={10}
+		>
 			<Box>
 				<Flex
 					bg={"purple"}
