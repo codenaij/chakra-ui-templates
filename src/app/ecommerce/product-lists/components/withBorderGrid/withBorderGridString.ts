@@ -15,46 +15,46 @@ import { LuStar } from "react-icons/lu";
 const products = [
 	{
 		id: 1,
-		name: "Organize Basic Set (Walnut)",
-		price: "$149",
+		name: "Aloe Vera face mask",
+		price: "£149",
 		rating: 5,
-		reviewCount: 38,
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-05-image-card-01.jpg",
-		imageAlt: "TODO",
+		reviewCount: 111,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1596202353035-7fcf1a90094a?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Aloe Vera face mask.",
 		href: "#",
 	},
 	{
 		id: 2,
-		name: "Organize Pen Holder",
-		price: "$15",
+		name: "SK One Toner",
+		price: "£15",
 		rating: 5,
 		reviewCount: 18,
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-05-image-card-02.jpg",
-		imageAlt: "TODO",
+		productImgSrc:
+			"https://images.unsplash.com/photo-1738721798337-1c0036181229?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "SK one toner.",
 		href: "#",
 	},
 	{
 		id: 3,
-		name: "Organize Sticky Note Holder",
-		price: "$15",
-		rating: 5,
-		reviewCount: 14,
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-05-image-card-03.jpg",
-		imageAlt: "TODO",
+		name: "Glossier Cleanser",
+		price: "£15",
+		rating: 4,
+		reviewCount: 20,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Glossier milky jelly cleanser conditioning face wash kit.",
 		href: "#",
 	},
 	{
 		id: 4,
-		name: "Organize Phone Holder",
-		price: "$15",
+		name: "Dr Tuna Face Tonic",
+		price: "£20",
 		rating: 4,
 		reviewCount: 21,
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-05-image-card-04.jpg",
-		imageAlt: "TODO",
+		productImgSrc:
+			"https://images.unsplash.com/photo-1659785569310-03020ef38b25?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Dr Tuna Face Tonic.",
 		href: "#",
 	},
 	// More products...
@@ -88,8 +88,8 @@ const WithBorderGrid = () => {
 								p={{ base: 4, sm: 6 }}
 							>
 								<Image
-									alt={product.imageAlt}
-									src={product.imageSrc}
+									alt={product.productImgAlt}
+									src={product.productImgSrc}
 									objectFit={"cover"}
 									_groupHover={{ opacity: 0.75 }}
 									bg={"gray.200"}
@@ -144,4 +144,5 @@ const WithBorderGrid = () => {
 };
 
 export default WithBorderGrid;
+
 `;

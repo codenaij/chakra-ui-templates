@@ -8,31 +8,41 @@ import {
 	Text,
 	VStack,
 } from "@chakra-ui/react";
+import { LoremIpsum } from "lorem-ipsum";
 
-const features = [
+const lorem = new LoremIpsum({
+	sentencesPerParagraph: {
+		min: 4,
+		max: 8,
+	},
+	wordsPerSentence: {
+		max: 16,
+		min: 8,
+	},
+});
+
+const description = [
 	{
-		name: "Adventure-ready",
-		description:
-			"The Drawstring Canister is water and tear resistant with durable canvas construction. This bag holds up to the demands of daily use while keeping your snacks secure.",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-04-detail-03.jpg",
-		imageAlt: "Printed photo of bag being tossed into the sky on top of grass.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
+		productImgSrc:
+			"https://images.unsplash.com/photo-1680337673571-e194b42583ab?q=80&w=3240&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt:
+			"Printed photo of bag being tossed into the sky on top of grass.",
 	},
 	{
-		name: "Minimal and clean",
-		description:
-			"Everything you need, nothing you don't. This bag has the simple, contemporary design that enables you to tell everyone you know about how essentialism is the only rational way to live life.",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-04-detail-01.jpg",
-		imageAlt: "Double stitched black canvas hook loop.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
+		productImgSrc:
+			"https://images.unsplash.com/photo-1545235617-7a424c1a60cc?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Double stitched black canvas hook loop.",
 	},
 	{
-		name: "Organized",
-		description:
-			"Never lose your snacks again with our patent-pending snack stash pocket system. With dedicated pouches for each of your snacking needs, the Drawstring Canister unlocks new levels of efficiency and convenience.",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-04-detail-02.jpg",
-		imageAlt: "Black canvas body with chrome zipper and key ring.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
+		productImgSrc:
+			"https://images.unsplash.com/photo-1630299098851-b55590a59235?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Black canvas body with chrome zipper and key ring.",
 	},
 ];
 
@@ -48,7 +58,7 @@ const WithWideImages = () => {
 							color={"gray.500"}
 							fontSize={"md"}
 						>
-							Drawstring Canister
+							Apple&apos;s latest flagship phone.
 						</Heading>
 						<Text
 							as="p"
@@ -58,12 +68,10 @@ const WithWideImages = () => {
 							letterSpacing={"tight"}
 							color={"gray.900"}
 						>
-							Use it your way
+							Iphone 15 Pro Max
 						</Text>
 						<Text as="p" mt={4} color={"gray.500"}>
-							The Drawstring Canister comes with multiple strap and handle
-							options to adapt throughout your day. Shoulder sling it, backpack
-							it, or handy carry it.
+							{lorem.generateSentences(3)}
 						</Text>
 					</Box>
 
@@ -75,7 +83,7 @@ const WithWideImages = () => {
 						pt={{ base: 10 }}
 						alignItems={"stretch"}
 					>
-						{features.map((feature) => (
+						{description.map((feature) => (
 							<Box
 								key={feature.name}
 								display={{ base: "flex", lg: "grid" }}
@@ -100,8 +108,8 @@ const WithWideImages = () => {
 								</GridItem>
 								<GridItem flexGrow={1} colSpan={{ lg: 7, xl: 8 }}>
 									<Image
-										alt={feature.imageAlt}
-										src={feature.imageSrc}
+										alt={feature.productImgAlt}
+										src={feature.productImgSrc}
 										w={"full"}
 										aspectRatio={5 / 2}
 										borderRadius={"lg"}
@@ -119,4 +127,5 @@ const WithWideImages = () => {
 };
 
 export default WithWideImages;
+
 `;

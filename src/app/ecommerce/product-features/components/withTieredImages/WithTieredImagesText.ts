@@ -9,26 +9,35 @@ import {
 	Text,
 	VStack,
 } from "@chakra-ui/react";
+import { LoremIpsum } from "lorem-ipsum";
 
-const features = [
+const lorem = new LoremIpsum({
+	sentencesPerParagraph: {
+		min: 4,
+		max: 8,
+	},
+	wordsPerSentence: {
+		max: 16,
+		min: 8,
+	},
+});
+
+const description = [
 	{
-		name: "Sleek design",
-		description:
-			"The machined kettle has a smooth black finish and contemporary shape that stands apart from most plastic appliances.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
 	},
 	{
-		name: "Comfort handle",
-		description: "Shaped for steady pours and insulated to prevent burns.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
 	},
 	{
-		name: "One-button control",
-		description:
-			"The one button control has a digital readout for setting temperature and turning the kettle on and off.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
 	},
 	{
-		name: "Long spout",
-		description:
-			"Designed specifically for controlled pour-overs that don't slash or sputter.",
+		name: lorem.generateWords(2),
+		description: lorem.generateSentences(2),
 	},
 ];
 
@@ -54,7 +63,7 @@ const WithTieredImages = () => {
 								color={"gray.500"}
 								fontSize={"md"}
 							>
-								Machined Kettle
+								Apple&apos;s latest flagship phone.
 							</Heading>
 							<Text
 								as="p"
@@ -64,13 +73,13 @@ const WithTieredImages = () => {
 								letterSpacing={"tight"}
 								color={"gray.900"}
 							>
-								Elegant simplicity
+								Iphone 15 Pro Max
 							</Text>
 						</Box>
 
 						<Box as="dl" mt="10" className="mt-10">
 							<VStack gap={10} align={"stretch"}>
-								{features.map((feature) => (
+								{description.map((feature) => (
 									<Box key={feature.name}>
 										<Text
 											as="dt"
@@ -91,8 +100,8 @@ const WithTieredImages = () => {
 
 					<GridItem>
 						<Image
-							alt="Black kettle with long pour spot and angled body on marble counter next to coffee mug and pour-over system."
-							src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-09-main-detail.jpg"
+							alt={lorem.generateWords(2)}
+							src="https://images.unsplash.com/photo-1680337673571-e194b42583ab?q=80&w=3240&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							aspectRatio={1}
 							w={"full"}
 							borderRadius={"lg"}
@@ -105,8 +114,8 @@ const WithTieredImages = () => {
 							mt={{ base: 4, sm: 6, lg: 8 }}
 						>
 							<Image
-								alt="Detail of temperature setting button on kettle bass with digital degree readout."
-								src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-09-detail-01.jpg"
+								alt={lorem.generateWords(2)}
+								src="https://images.unsplash.com/photo-1545235617-7a424c1a60cc?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								aspectRatio={1}
 								w={"full"}
 								borderRadius={"lg"}
@@ -114,8 +123,8 @@ const WithTieredImages = () => {
 								objectFit="cover"
 							/>
 							<Image
-								alt="Kettle spout pouring boiling water into coffee grounds in pour-over mug."
-								src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-09-detail-02.jpg"
+								alt={lorem.generateWords(2)}
+								src="https://images.unsplash.com/photo-1630299098851-b55590a59235?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								aspectRatio={1}
 								w={"full"}
 								borderRadius={"lg"}
@@ -131,4 +140,5 @@ const WithTieredImages = () => {
 };
 
 export default WithTieredImages;
+
 `;

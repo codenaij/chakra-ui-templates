@@ -12,36 +12,33 @@ import {
 const products = [
 	{
 		id: 1,
-		name: "Nomad Pouch",
+		name: "Iphone 15 Pro Max",
+		stock: 12,
+		price: "£300",
 		href: "#",
-		price: "$50",
-		availability: "White and Black",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-07-product-01.jpg",
-		imageAlt:
-			"White fabric pouch with white zipper, black zipper pull, and black elastic loop.",
+		productImgSrc:
+			"https://images.unsplash.com/photo-1680337673571-e194b42583ab?q=80&w=3240&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "A blue iphone sitting next to a yellow apple.",
 	},
 	{
 		id: 2,
-		name: "Zip Tote Basket",
+		name: "Ladies Floral Shoes",
 		href: "#",
-		price: "$140",
-		availability: "Washed Black",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg",
-		imageAlt:
-			"Front of tote bag with washed black canvas body, black straps, and tan leather handles and accents.",
+		price: "£35",
+		stock: 10,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Blue, yellow and red ladies floral shoes.",
 	},
 	{
 		id: 3,
-		name: "Medium Stuff Satchel",
+		name: "Puma Sneakers",
 		href: "#",
-		price: "$220",
-		availability: "Blue",
-		imageSrc:
-			"https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-07-product-03.jpg",
-		imageAlt:
-			"Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
+		price: "£35",
+		stock: 15,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1605034313761-73ea4a0cfbf3?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Puma Sneakers.",
 	},
 	// More products...
 ];
@@ -68,8 +65,8 @@ export const WithSupportingText = () => {
 						{(product) => (
 							<LinkBox key={product.id} className="group">
 								<Image
-									alt={product.imageAlt}
-									src={product.imageSrc}
+									alt={product.productImgAlt}
+									src={product.productImgSrc}
 									aspectRatio={1}
 									w="full"
 									borderRadius="lg"
@@ -88,7 +85,7 @@ export const WithSupportingText = () => {
 									</Text>
 								</LinkOverlay>
 								<Text color={"gray.500"} fontStyle={"italic"} fontSize={"sm"}>
-									{product.availability}
+									{product.stock} in stock
 								</Text>
 								<Text
 									mt={2}
@@ -106,4 +103,5 @@ export const WithSupportingText = () => {
 		</Box>
 	);
 };
+
 `;

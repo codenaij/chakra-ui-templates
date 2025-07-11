@@ -39,7 +39,7 @@ const MainComponentBlock = ({
 					flexDir={{ base: "column", md: "row" }}
 					p={4}
 				>
-					<Text fontSize={"xl"} fontWeight={"bold"}>
+					<Text fontSize={{ base: "md", md: "xl" }} fontWeight={"bold"}>
 						{title}
 					</Text>
 					<Flex
@@ -59,7 +59,7 @@ const MainComponentBlock = ({
 						</RadioGroup>
 						<IconButton
 							variant={"closeElevated"}
-							size={"sm"}
+							size={{ base: "xs", md: "sm" }}
 							bg={"basic.100"}
 							onClick={() => {
 								if (view === "code") {

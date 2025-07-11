@@ -6,12 +6,42 @@ const products = [
 	{
 		id: 1,
 		name: "Iphone 15 Pro Max",
-		color: "Blue",
-		price: "$100",
+		stock: 12,
+		price: "£300",
 		href: "#",
-		imageSrc:
+		productImgSrc:
 			"https://images.unsplash.com/photo-1680337673571-e194b42583ab?q=80&w=3240&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		imageAlt: "A blue iphone sitting next to a yellow apple.",
+		productImgAlt: "A blue iphone sitting next to a yellow apple.",
+	},
+	{
+		id: 2,
+		name: "Ladies Floral Shoes",
+		href: "#",
+		price: "£35",
+		stock: 10,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Blue, yellow and red ladies floral shoes.",
+	},
+	{
+		id: 3,
+		name: "Puma Sneakers",
+		href: "#",
+		price: "£35",
+		stock: 15,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1605034313761-73ea4a0cfbf3?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Puma Sneakers.",
+	},
+	{
+		id: 4,
+		name: "Casio Watch",
+		href: "#",
+		price: "£25",
+		stock: 6,
+		productImgSrc:
+			"https://images.unsplash.com/photo-1734776571130-3750ab3fe955?q=80&w=2270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		productImgAlt: "Casio Watch.",
 	},
 	// More products...
 ];
@@ -36,7 +66,7 @@ const WithCtaLink = () => {
 						letterSpacing="tight"
 						color="gray.900"
 					>
-						Trending products
+						Top selling products
 					</Text>
 					<Link
 						href="#"
@@ -47,7 +77,7 @@ const WithCtaLink = () => {
 						_hover={{ color: "indigo.500" }}
 						cursor="pointer"
 					>
-						Shop the collection
+						Show all trending products
 						<Icon as={LuArrowRight} boxSize={4} />
 					</Link>
 				</Box>
@@ -79,8 +109,8 @@ const WithCtaLink = () => {
 								_groupHover={{ opacity: 0.75 }}
 							>
 								<Image
-									alt={product.imageAlt}
-									src={product.imageSrc}
+									alt={product.productImgAlt}
+									src={product.productImgSrc}
 									objectFit="cover"
 									width="100%"
 									height="100%"
@@ -93,7 +123,7 @@ const WithCtaLink = () => {
 								</Text>
 							</Link>
 							<Text mt={1} fontSize="sm" color="gray.500">
-								{product.color}
+								{product.stock} in stock
 							</Text>
 							<Text mt={1} fontSize="sm" fontWeight="medium" color="gray.900">
 								{product.price}
@@ -121,4 +151,5 @@ const WithCtaLink = () => {
 };
 
 export default WithCtaLink;
+
 `;
