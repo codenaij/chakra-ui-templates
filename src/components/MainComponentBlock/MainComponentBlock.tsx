@@ -34,14 +34,19 @@ const MainComponentBlock = ({
 			<Box>
 				<Flex
 					bg={"purple"}
-					justifyContent={"space-between"}
-					alignItems={"center"}
+					justifyContent={{ md: "space-between" }}
+					alignItems={{ md: "center" }}
+					flexDir={{ base: "column", md: "row" }}
 					p={4}
 				>
 					<Text fontSize={"xl"} fontWeight={"bold"}>
 						{title}
 					</Text>
-					<Flex gap={2} alignItems={"center"}>
+					<Flex
+						alignSelf={{ base: "flex-end", md: "unset" }}
+						gap={2}
+						alignItems={"center"}
+					>
 						<RadioGroup
 							value={view}
 							onValueChange={({ value }) => {
