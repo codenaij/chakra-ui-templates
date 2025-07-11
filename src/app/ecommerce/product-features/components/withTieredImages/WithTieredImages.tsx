@@ -62,7 +62,7 @@ const WithTieredImages = () => {
 								color={"gray.500"}
 								fontSize={"md"}
 							>
-								Apple's latest flagship phone.
+								Apple&apos;s latest flagship phone.
 							</Heading>
 							<Text
 								as="p"
