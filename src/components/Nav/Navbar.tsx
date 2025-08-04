@@ -1,92 +1,100 @@
 "use client";
 
 import {
-	Box,
-	Button,
-	CloseButton,
-	Drawer,
-	Flex,
-	IconButton,
-	Portal,
-	Text,
-	useDrawer,
+  Box,
+  Button,
+  CloseButton,
+  Drawer,
+  Flex,
+  IconButton,
+  Portal,
+  Text,
+  useDrawer,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { LuAlignRight, LuGithub } from "react-icons/lu";
 import SidebarMenu from "../Sidebar/SidebarMenu";
 
 const Navbar = () => {
-	const router = useRouter();
-	const drawer = useDrawer();
+  const router = useRouter();
+  const drawer = useDrawer();
 
-	const handleCloseDrawer = () => {
-		drawer.setOpen(false);
-	};
+  const handleCloseDrawer = () => {
+    drawer.setOpen(false);
+  };
 
-	return (
-		<Flex
-			pos={"sticky"}
-			top={0}
-			boxShadow={"rgba(0, 0, 0, 0.25) 0px 2px 6px"}
-			zIndex={1000}
-			w="100%"
-			justify="space-between"
-			align="center"
-			h="80px"
-			bg={"white"}
-			px={{ base: 5, md: 20 }}
-		>
-			<Flex gap={2}>
-				<Drawer.RootProvider placement="start" size={"xs"} value={drawer}>
-					<Drawer.Trigger asChild>
-						<Box>
-							<IconButton aria-label="Toggle sidebar" variant="elevated">
-								<LuAlignRight color={"gray.900"} />
-							</IconButton>
-						</Box>
-					</Drawer.Trigger>
-					<Portal>
-						<Drawer.Backdrop />
-						<Drawer.Positioner>
-							<Drawer.Content bg={"basic.100"}>
-								<Drawer.Header>
-									<Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
-								</Drawer.Header>
-								<Drawer.Body>
-									<SidebarMenu onClose={handleCloseDrawer} />
-								</Drawer.Body>
+  return (
+    <Flex
+      pos={"sticky"}
+      top={0}
+      boxShadow={"rgba(0, 0, 0, 0.25) 0px 2px 6px"}
+      zIndex={1000}
+      w="100%"
+      justify="space-between"
+      align="center"
+      h="80px"
+      bg={"white"}
+      px={{ base: 5, md: 20 }}
+    >
+      <Flex gap={2}>
+        <Drawer.RootProvider placement="start" size={"xs"} value={drawer}>
+          <Drawer.Trigger asChild>
+            <Box>
+              <IconButton aria-label="Toggle sidebar" variant="elevated">
+                <LuAlignRight color={"gray.900"} />
+              </IconButton>
+            </Box>
+          </Drawer.Trigger>
+          <Portal>
+            <Drawer.Backdrop />
+            <Drawer.Positioner>
+              <Drawer.Content bg={"basic.100"}>
+                <Drawer.Header>
+                  <Drawer.Title>CHAKRA TEMPLATES</Drawer.Title>
+                </Drawer.Header>
+                <Drawer.Body>
+                  <SidebarMenu onClose={handleCloseDrawer} />
+                </Drawer.Body>
 
-								<Drawer.CloseTrigger asChild>
-									<CloseButton size="sm" variant="closeElevated" />
-								</Drawer.CloseTrigger>
-							</Drawer.Content>
-						</Drawer.Positioner>
-					</Portal>
-				</Drawer.RootProvider>
-				<Text
-					fontSize={"2xl"}
-					fontWeight={"semibold"}
-					cursor={"pointer"}
-					color={"gray.900"}
-					onClick={() => router.push("/")}
-				>
-					CHAKRA-TEMPLATES
-				</Text>
-			</Flex>
-			<Box display={{ base: "none", md: "flex" }} gap={10} alignItems="center">
-				<Button variant="underlined">Components</Button>
-				<IconButton variant="closeElevated">
-					<LuGithub color="white" />
-				</IconButton>
-				<Button
-					variant="elevated"
-					onClick={() => router.push("/getting-started/overview")}
-				>
-					Get Started
-				</Button>
-			</Box>
-		</Flex>
-	);
+                <Drawer.CloseTrigger asChild>
+                  <CloseButton size="sm" variant="closeElevated" />
+                </Drawer.CloseTrigger>
+              </Drawer.Content>
+            </Drawer.Positioner>
+          </Portal>
+        </Drawer.RootProvider>
+        <Text
+          fontSize={"2xl"}
+          fontWeight={"semibold"}
+          cursor={"pointer"}
+          color={"gray.900"}
+          onClick={() => router.push("/")}
+        >
+          CHAKRA-TEMPLATES
+        </Text>
+      </Flex>
+      <Box display={{ base: "none", md: "flex" }} gap={10} alignItems="center">
+        <Button variant="underlined">Components</Button>
+        <IconButton
+          variant="closeElevated"
+          onClick={() =>
+            window.open(
+              "https://github.com/codenaij/chakra-ui-templates",
+              "_blank"
+            )
+          }
+        >
+          <LuGithub color="white" />
+        </IconButton>
+        <Button
+          variant="elevated"
+          onClick={() => router.push("/getting-started/overview")}
+        >
+          Get Started
+        </Button>
+      </Box>
+    </Flex>
+  );
 };
 
 export default Navbar;
