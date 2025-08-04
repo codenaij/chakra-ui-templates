@@ -245,7 +245,7 @@ copies or substantial portions of the Software.
 
 - **Issues**: [GitHub Issues](https://github.com/codenaij/chakra-ui-templates/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/codenaij/chakra-ui-templates/discussions)
-- **Documentation**: Visit the [live demo](https://your-demo-url.vercel.app)
+- **Documentation**: Visit the [live demo](https://chakra-ui-templates.com)
 
 ---
 
