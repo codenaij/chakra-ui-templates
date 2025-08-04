@@ -78,9 +78,9 @@ export default function HomePage() {
               polished and contemporary.
             </List.Item>
             <List.Item>
-              🔧 Fully Customizable Built with Chakra UI v3's flexible theming
-              system. Easily adapt colors, spacing, and components to match your
-              brand.
+              🔧 Fully Customizable Built with Chakra UI v3&lsquo;s flexible
+              theming system. Easily adapt colors, spacing, and components to
+              match your brand.
             </List.Item>
             <List.Item>
               📱 Mobile-First Design All templates are crafted with mobile
