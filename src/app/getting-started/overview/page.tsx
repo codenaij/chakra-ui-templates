@@ -30,7 +30,9 @@ const OverviewPage = () => {
               fontSize: "0.75rem",
             }}
           >
-            npm i @chakra-ui/react @emotion/react
+            {`
+npm i @chakra-ui/react @emotion/react
+npm i lorem-ipsum`}
           </SyntaxHighlighter>
         </Box>
       </Box>
