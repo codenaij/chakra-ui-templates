@@ -5,7 +5,7 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 const OverviewPage = () => {
   return (
     <Container>
-      <Box my={10}>
+      <Box mb={10}>
         <Heading
           as="h1"
           my={3}

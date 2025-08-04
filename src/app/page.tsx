@@ -26,7 +26,7 @@ const components = [
 export default function HomePage() {
   return (
     <Container>
-      <Box my={10}>
+      <Box mb={10}>
         <Heading
           as="h1"
           my={3}
